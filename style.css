@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
     margin: 0;
     padding: 0;
@@ -27,7 +31,6 @@ body{
 }
 
 .searchWrapper button{
-    /* width: 100px; */
     font-size: 15px;
     border: 0;
     outline: 0;
