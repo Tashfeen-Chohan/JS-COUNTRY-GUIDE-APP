@@ -10,18 +10,26 @@
   <body>
     <div class="flex justify-center items-center min-h-screen bg-[#3d64e6]">
       <div class="bg-white rounded shadow-xl w-[90%] py-5 md:max-w-xl">
-        <h1 class="text-3xl font-bold text-center mb-10 ]">Country Guide App</h1>
-        <!-- searchWrapper -->
-        <div class="flex justify-center items-center gap-5">
-          <input
-            class="border-b-2 border-[#3d64e6] p-1 w-[60%]"
-            placeholder="Entry any country here ..."
-            type="text"
-            name=""
-            id="countryInput"
-          />
-          <button class="bg-[#3d64e6] hover:bg-blue-700 transition-colors delay-300 py-1 px-3 shadow-xl text-white rounded" id="searchBtn">Search</button>
-        </div>
+          <h1 class="text-3xl font-bold text-center mb-10 ]">
+            Country Guide App
+          </h1>
+          <!-- searchWrapper -->
+          <div class="flex justify-center items-center gap-5">
+            <input
+              class="border-b-2 border-[#3d64e6] p-1 w-[60%]"
+              placeholder="Entry any country here ..."
+              type="text"
+              name=""
+              id="countryInput"
+              required="true"
+            />
+            <button
+              id="searchBtn"
+              class="bg-[#3d64e6] hover:bg-blue-700 transition-colors delay-300 py-1 px-3 shadow-xl text-white rounded"
+            >
+              Search
+            </button>
+          </div>
         <div id="result"></div>
       </div>
     </div>

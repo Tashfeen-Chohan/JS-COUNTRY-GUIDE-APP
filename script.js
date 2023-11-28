@@ -1,11 +1,15 @@
 let countryInput = document.getElementById("countryInput");
-let searchBtn = document.getElementById("searchBtn");
+let searchBtn   = document.getElementById("searchBtn");
 let result = document.getElementById("result");
 
 searchBtn.addEventListener("click", function () {
-  let countryName = countryInput.value;
+  let countryName = countryInput.value.trim();
+  if (countryName === ""){
+    result.innerHTML = `<p class="p-5 text-red-600 font-bold">Please enter a country name before searching.</p>`;
+    return;
+  }
+
   let url = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
-  console.log(url);
 
   fetch(url)
     .then((response) => response.json())
@@ -47,6 +51,6 @@ searchBtn.addEventListener("click", function () {
             })
     .catch((error) => {
         console.log("Error occured while fetching data : ", error)
-        result.innerHTML = "<p>An error occurred while fetching data. Please try again later.</p>";
+        result.innerHTML = `<p class="p-5 text-red-600 font-bold">An error occurred while fetching data. Please try again later.</p>`;
     })
 });
