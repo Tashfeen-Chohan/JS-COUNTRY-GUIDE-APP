@@ -5,17 +5,18 @@ let result = document.getElementById("result");
 searchBtn.addEventListener("click", function () {
   let countryName = countryInput.value.trim();
   if (countryName === ""){
-    result.innerHTML = `<p class="p-5 text-red-600 font-bold">Please enter a country name before searching.</p>`;
+    result.innerHTML = `<p class="px-5 md:px-16 text-red-600 font-bold">Please enter a country name before searching.</p>`;
     return;
   }
 
   let url = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
+  result.innerHTML = `<p class="text-center px-5 md:px-18 font-bold text-yellow-500 md:text-xl ">Loading...</p>`
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
         if (data.status === 404){
-            result.innerHTML = `<p class="p-5 text-red-600 font-bold">It seems like the country you entered might not exist or is not recognized internationally. Please verify the name or try searching for a different country.</p>`;
+            result.innerHTML = `<p class="px-5 md:px-16 text-red-600 font-bold">It seems like the country you entered might not exist or is not recognized internationally. Please verify the name or try searching for a different country.</p>`;
         } else {
 
             result.innerHTML = `
@@ -51,6 +52,6 @@ searchBtn.addEventListener("click", function () {
             })
     .catch((error) => {
         console.log("Error occured while fetching data : ", error)
-        result.innerHTML = `<p class="p-5 text-red-600 font-bold">An error occurred while fetching data. Please try again later.</p>`;
+        result.innerHTML = `<p class="px-5 md:px-16 text-red-600 font-bold">An error occurred while fetching data. Please try again later.</p>`;
     })
 });
